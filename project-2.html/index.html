@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+     integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Welcome To EdgeLedger</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+    background: #fff;
+    color: #333;
+    line-height: 1.6;
+}
+ul{
+    list-style: none;
+}
+a{
+    color: #333;
+    text-decoration: none;
+}
+h1,h2{
+    font-weight: 300;
+    line-height: 1.2;
+}
+p{
+    margin: 10px 0;
+}
+img{
+    width: 100%;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    color: #fff;
+    opacity: 0.8;
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    top: 0px;
+    padding: 0 30px;
+}
+.navbar a{
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 5px;
+}
+.navbar a:hover{
+    border-bottom: #28a745 2px solid;
+}
+.navbar ul{
+    display: flex;
+
+}
+.navbar .logo{
+    font-weight: 400;
+}
+/*header*/
+.hero{
+    background: url('../photos/newyork.jpg') no-repeat center center/cover;
+    height: 100vh;
+    position: relative;
+    color: #fff;
+}
+.hero .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    padding: 0 20px;
+
+}
+.hero .content h1{
+    font-size: 55px;
+}
+.hero .content p{
+    font-size: 23px;
+    max-width: 600px;
+    margin: 20px 0 30px;
+
+}
+.hero::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+.hero *{
+    z-index: 10;
+}
+/*Icons*/
+.icons{
+    padding:30px;
+}
+.icons h3{
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.icons i{
+    background-color: #28a745;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+.cases img:hover{
+    opacity: 0.7;
+}
+.team img{
+    border-radius: 50%;
+}
+/*Call Backform*/
+.callback-form{
+    width: 100%;
+    padding: 20px 0;
+
+}
+.callback-form label{
+    display: block;
+    margin-bottom: 5px;
+}
+.callback-form .form-control{
+    margin-bottom: 15px;
+
+}
+.callback-form input{
+    width: 100%;
+    padding: 4px;
+    height: 40px;
+    border: #f5f5f5;
+}
+.callback-form input:focus{
+    outline-color: #28a745;
+}
+.callback-form .btn{
+    padding:12px 0;
+    margin-top: 20px;
+
+}
+/*Footer*/
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align:center;
+    height: 200px;
+    
+}
+.footer a{
+    color: #fff;
+}
+.footer a:hover{
+    color: #28a745;
+}
+.footer .social > *{
+    margin-right: 30px;
+}
+/*mobile*/
+@media(max-width:768px){
+    .navbar{
+        flex-direction: column;
+        height: 120px;
+        padding: 20px;
+
+    }
+    .navbar a{
+        padding: 10px 10px;
+        margin: 0 3px;
+    }
+    .flex-items{
+        flex-direction: column;
+
+    }
+    .flex-columns .column , .flex-grid .column{
+        flex: 100%;
+        max-width: 100%;
+        
+
+    }
+    .team img{
+        width: 70%;
+    }
+
+}
+
+/*Test colors*/
+.text-primary{
+    color: #28a745;
+}
+.text-secondary{
+    color: #0284d0;
+}
+.btn{
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 30px;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+}
+.btn:hover{
+    opacity: 0.9;
+
+}
+.btn-primary , .bg-primary{
+    background:#28a745;
+    color:#fff;
+}
+.btn-secondary , .bg-secondary{
+    background:#0284d0;
+    color:#fff;
+}
+.btn-dark , .bg-dark{
+    background:#333;
+    color:#fff;
+}
+.btn-light , .bg-light{
+    background:#f4f4f4;
+    color:#333;
+}
+.btn-outline{
+    background: transparent;
+    border: 1px solid #fff;
+}
+/*Flex items*/
+.flex-items{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.flex-items div{
+    padding: 20px;
+}
+/*Flex columns*/
+.flex-columns.flex-reverse .row{
+    flex-direction: row-reverse;
+}
+.flex-columns .row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+
+}
+.flex-columns .column{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+.flex-columns .column .column-1,
+.flex-columns .column .column-2{
+    height: 100%;
+}
+.flex-columns img{
+    width: 100%;
+    height: 100%;
+}
+.flex-columns .column-2{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 30px;
+}
+.flex-columns h2{
+    font-size: 40px;
+    font-weight: 100;
+}
+.flex-columns h4{
+    margin-bottom: 40px;
+}
+.flex-columns p{
+    margin: 20px 0;
+}
+/*section header*/
+.section-header{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.section-header h2{
+    font-size: 40px;
+    margin: 20px 0;
+}
+.section-padding{
+    padding: 20px 20px 40px;
+}
+/*flex-grid*/
+.flex-grid .row{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+.flex-grid .column{
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+</style>
+</head>
+<body>
+    <header class="hero">
+        <div id="navbar" class="navbar">
+            <h1 class="logo">
+                <span class="text-primary"><i class="fas fa-book-open"></i>Edge</span>Ledger
+            </h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#cases">Cases</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+          <div class="content">
+              <h1>The Sky Is The Limit</h1>
+              <p>We provide world class financial assistance</p>
+              <a href="#about" class="btn"><i class="fas fa-chevron-right"></i>  Read More</a>
+          </div>
+    </header>
+    <main>
+        <!--About-Icons-->
+        <section id="about" class="icons bg-light">
+            <div class="flex-items">
+                <div>
+                    <i class="fas fa-university fa-2x"></i>
+                    <div>
+                        <h3>Investment Banking</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam sunt
+                            , facilis id illum atque porro excepturi earum nobis eveniet beatae!</p>
+                    </div>
+                </div>
+                <div>
+                    <i class="fas fa-book-reader fa-2x"></i>
+                    <div>
+                        <h3>portfolio Manager</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam sunt
+                            , facilis id illum atque porro excepturi earum nobis eveniet beatae!</p>
+                    </div>
+                </div>
+
+                <div>
+                    <i class="fas fa-pencil-alt fa-2x"></i>
+                    <div>
+                        <h3>Tax & Custodial</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam sunt
+                            , facilis id illum atque porro excepturi earum nobis eveniet beatae!</p>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </section> 
+        <!--About:solutions-->
+        <section class="solutions flex-columns">
+            <div class="row">
+                <div class="column">
+                    <div class="column-1">
+                        <img src="../photos/people.jpg" alt="people">
+
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="column-2 bg-primary">
+                        <h4>What you are looking for</h4>
+                        <h2>We provide bespoke solutions</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed impedit eius
+                             magni sit accusantium, temporibus, blanditiis, odio incidunt officiis 
+                            veniam maiores quasi tempore modi vero. Sint aut rem quisquam a.</p>
+                            <a href="#" class="btn btn-outline">
+                                <i class="fas fa-chevron"></i>
+                                Read More
+                            </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Cases-->
+        <section id="cases" class="cases flex-grid section-padding">
+            <header class="section-header">
+                <h4>This is what we do</h4>
+                <h2>Bussiness Cases</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur eum quibusdam 
+                    explicabo facilis laboriosam unde alias voluptatem molestiae ab qui!</p>
+
+            </header>
+            <div class="row">
+                <div class="column">
+                    <img src="../photos/case-1.jpg" alt="">
+                    <img src="../photos/case-2.jpg" alt="">
+                </div>
+                <div class="column">
+                    <img src="../photos/case-3.jpg" alt="">
+                    <img src="../photos/case-4.jpg" alt="">
+                </div>
+                <div class="column">
+                    <img src="../photos/case-5.jpg" alt="">
+                    <img src="../photos/case-6.jpg" alt="">
+                </div>
+                <div class="column">
+                    <img src="../photos/case-7.jpg" alt="">
+                    <img src="../photos/case-8.jpg" alt="">
+                </div>
+
+            </div>
+        </section>
+        <!--Blog-->
+        <section  id="blog"  class="blog flex-columns flex-reverse">
+            <div class="row">
+                <div class="column">
+                    <div class="column-1">
+                        <img src="../photos/coffee.jpg" alt="people">
+
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="column-2 bg-secondary">
+                        <h4>April 16 2020</h4>
+                        <h2>Blog Post</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed impedit eius
+                             magni sit accusantium, temporibus, blanditiis, odio incidunt officiis 
+                            veniam maiores quasi tempore modi vero. Sint aut rem quisquam a.</p>
+                            <a href="blog.html" class="btn btn-outline">
+                                <i class="fas fa-chevron"></i>
+                                Read More
+                            </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Team-->
+        <section id="team" class="team  section-padding">
+            <header class="section-header">
+                <h4>Who we are</h4>
+                <h2>Our Professional Team</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur eum quibusdam 
+                    explicabo facilis laboriosam unde alias voluptatem molestiae ab qui!</p>
+
+            </header>
+           <div class="flex-items">
+               <div>
+                   <img src="../photos/person-1.jpg" alt="">
+                   <h4>John Doe</h4>
+                   <p>President</p>
+               </div>
+               <div>
+                <img src="../photos/person-2.jpg" alt="">
+                <h4>John Doe</h4>
+                <p> Vice President</p>
+            </div>
+            <div>
+                <img src="../photos/person-3.jpg" alt="">
+                <h4>Steve smith</h4>
+                <p>Markrting Head</p>
+            </div>
+
+              
+
+
+
+           </div>
+
+        </section>
+        <section id="contact"    class="contact flex-columns">
+            <div class="row">
+                <div class="column">
+                    <div class="column-1">
+                        <img src="../photos/lap.jpg" alt="people">
+
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="column-2 bg-light">
+                        <h2>Request Callback</h2>
+                        <form action="" class="callback-form">
+                            <div class="form-control">
+                                <label for="name"></label>
+                                <input type="text" name="name" id="name" placeholder=" Enter name">
+                                
+                            </div>
+                           
+                            <div class="form-control">
+                                <label for="email"></label>
+                                <input type="email" name="email" id="email" placeholder="Enter email">
+                                
+                            </div>
+                            <div class="form-control">
+                                <label for="phone"></label>
+                                <input type="" name="phone" id="phone" placeholder="Enter phone">
+                                
+                            </div>
+                            <input type="submit" value="send" id="submit" class="btn">
+
+
+
+
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section> 
+
+
+    </main>
+    <footer class="footer bg-dark">
+        <div class="social">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+
+        </div>
+        <p>Copyright &copy; 2020 - EdgeLedger</p>
+    </footer>
+
+
+
+</body>
+</html>
